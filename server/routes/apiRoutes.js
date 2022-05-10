@@ -270,4 +270,33 @@ router.get('/custom', async (req, res) => {
   }
 });
 
+function getRandomIntInclusive(min, max) {
+  const newMin = Math.ceil(min);
+  const newMax = Math.floor(max);
+  return Math.floor(Math.random() * (newMax - newMin + 1) + newMin);
+}
+router.get('/randomrestriction/:id', async (req, res) => {
+  try{
+    let result = await db.sequelizeDB.query(`select * from meal_restrictions where restriction_id !=${req.params.id}`)
+    result = result[0];
+    res.json(result);
+  } catch(err){
+    res.send(err);
+  }
+  });
+router.get('/generateRandom/:id', async (req, res) => {
+try{
+  let result = await fetch(`/api/randomrestriction/${req.params.id}`)
+  result = result[0];
+  res.json(result);
+  let randMeal = getRandomIntInclusive(0,result.length);
+  console.log(result.length);
+  let meal = await db.sequelizeDB.query(`select meal_name from meals where meal_id=${randMeal}`)
+  res.json({data:meal});
+  } catch(err) {
+    res.send(err);
+  }
+  
+});
+
 export default router;
