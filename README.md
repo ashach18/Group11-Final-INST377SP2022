@@ -1,7 +1,14 @@
 # Dining Hall Helper
 ## Project Overview 
   Too many students at UMD often struggle getting accustomed to the dining hall situation when arriving to campus. Therefore, we created a website to address any concern students have regarding the dining hall systems at UMD. From dietary restrictions to determining the proximity of a dining hall, our website will help students address any frequently asked questions they might have. 
+## Link to Website
+ Link: [Dining Hall Tracker](https://group11-inst377-finalproject.herokuapp.com/).
 
+## Target Browsers
+  * iPhone
+  * Desktop(Mac/PC)
+  * Tablets
+  
  # Developer Manual
  ## How to install application and all dependencies
  1. Clone the repository through Github Desktop or Terminal
@@ -22,15 +29,20 @@
   3. In the second terminal, run `npm test`
  
  ## Server Application Terminals 
- `/api` - API route for course grades and GPA data
+ `/api` - API route for diner meals and diner data
   * GET - Logs to console response query from URL. This returns response 'Got a GET request from /api'.
   * POST - obtains dining hall name from request body to fetch url. Fetch data json from Dining Hall API and returns the JSON response
   * PUT - returns response 'Got a PUT request at /api'
 
+# Known Bugs and Future Development
+ ## Bugs:
+  * More than one radio button can be selected
+
+## Future Development:
+  * More Usable UI/UX
+  * Updates For New Meals at the Diner
+  * More ways to filter the meals
+  
  
  
 
- 
-### How to use Markdown
-Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
-* [Markdown guide](https://www.markdownguide.org/cheat-sheet/)
